@@ -1,6 +1,6 @@
-const buttons = document.querySelectorAll('button');
+const weapons = document.querySelectorAll('.weapon');
 const results = document.querySelector('.results');
-const myArray = ["Rock", "Paper", "Scissors"];
+const myArray = ['Rock', 'Paper', 'Scissors'];
 let machineScore = 0;
 let humanScore = 0;
 let humanWeapon = '';
@@ -8,11 +8,11 @@ let machineWeapon = '';
 let matchCount = 0;
 
 function getMatch() {
-    for (let btn of buttons) {
-        btn.addEventListener("click", (e) => {
+    for (let wpn of weapons) {
+        wpn.addEventListener('click', (e) => {
             matchCount++;
             if (matchCount <= 5) {
-                humanWeapon = e.target.innerText;
+                humanWeapon = e.target.alt;
                 machineWeapon = setMachineWeapon();
                 showResult(setRoundResult(machineWeapon, humanWeapon));
             }
@@ -27,7 +27,7 @@ function setMachineWeapon() {
 
 function setRoundResult(weapon1, weapon2) {
     if (weapon1 === 'Paper' && weapon2 === 'Rock') {
-        machineScore++; return ' Machine wins with Paper agains Rock'
+        machineScore++; return ' Machine wins with Paper against Rock'
     }
     else if (weapon1 === 'Rock' && weapon2 === 'Scissors') {
         machineScore++; return 'Machine wins with Rock against Scissors'
@@ -42,7 +42,7 @@ function setRoundResult(weapon1, weapon2) {
         humanScore++; return 'Human wins with Scissors against Paper'
     }
     else if (weapon2 === 'Paper' && weapon1 === 'Rock') {
-        humanScore++; return 'Human wins with Paper agains Rock'
+        humanScore++; return 'Human wins with Paper against Rock'
     }
     else if (weapon1 === weapon2) return 'Tie';
 }
@@ -55,9 +55,9 @@ function showResult(Text) {
 }
 
 function FinalResultCalc(humanScore, machineScore) {
-    if (humanScore > machineScore) return " Human wins the best of 5! \n Refresh the page to start again!";
-    else if (humanScore < machineScore) return ("Machine wins the best of 5! \n Refresh the page to start again!");
-    else return " We have a Tie! \n Refresh the page and try again!";
+    if (humanScore > machineScore) return " Human wins the best of 5! Refresh the page to start again!";
+    else if (humanScore < machineScore) return ("Machine wins the best of 5!  Refresh the page to start again!");
+    else return " We have a Tie!  Refresh the page and try again!";
 }
 
 

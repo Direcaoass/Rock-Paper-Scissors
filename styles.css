@@ -1,4 +1,22 @@
 * {
     text-align: center;
+    background-color: gray;
+
+}
+
+
+.weapon-grid {
+    display: flex;
+    justify-content: center;
+    grid-template-columns: 3;
+    gap: 25px;
+    padding: 10px;
     
+}
+.weapon:hover{
+    border: 5px solid black
+    
+}
+.results {
+    font-size: 1.4rem;
 }
